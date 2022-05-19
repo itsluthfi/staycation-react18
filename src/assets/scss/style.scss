@@ -226,3 +226,31 @@ section {
 h5.line-height-2 {
   line-height: 48px;
 }
+
+footer {
+  border-top: 1px solid $gray-200;
+  padding-top: 50px;
+  margin-top: 120px;
+
+  .list-group-item {
+    padding: 5px 0;
+    border: 0;
+
+    a,
+    span {
+      color: $gray-300;
+    }
+
+    a {
+      @include hover-focus {
+        color: $gray-800;
+      }
+    }
+  }
+
+  .copyrights {
+    margin: 50px 0;
+    font-weight: 300;
+    color: $gray-300;
+  }
+}
