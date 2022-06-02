@@ -2,6 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LandingPage from "pages/LandingPage";
 import DetailsPage from "pages/DetailsPage";
+import CheckoutPage from "pages/CheckoutPage";
+import Example from "pages/Example";
+import NotFound from "pages/404";
 
 import "assets/scss/style.scss";
 
@@ -10,8 +13,11 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/" component={LandingPage}></Route>
-          <Route path="/details/:id" component={DetailsPage}></Route>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/properties/:id" component={DetailsPage} />
+          <Route path="/checkout" component={CheckoutPage} />
+          <Route path="/example" component={Example} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </Router>
     </div>

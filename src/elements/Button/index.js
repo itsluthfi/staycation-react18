@@ -3,20 +3,17 @@ import { Link } from "react-router-dom";
 import propTypes from "prop-types";
 
 export default function Button(props) {
-  // Implementasi semua proptypes yang diterima
   const className = [props.className];
   if (props.isPrimary) className.push("btn-primary");
   if (props.isLarge) className.push("btn-lg");
   if (props.isSmall) className.push("btn-sm");
-  if (props.isBlock) className.push("btn-blcok");
+  if (props.isBlock) className.push("btn-block");
   if (props.hasShadow) className.push("btn-shadow");
 
-  // Fungsi untuk handle ketika button dalam state onClick dan memastikan button menerima properti onClick agar tidak crash
   const onClick = () => {
     if (props.onClick) props.onClick();
   };
 
-  // Logic untuk merender Button ketika dalam kondisi disabled atau loading
   if (props.isDisabled || props.isLoading) {
     if (props.isDisabled) className.push("disabled");
     return (
@@ -33,7 +30,6 @@ export default function Button(props) {
     );
   }
 
-  // Rendering component Button untuk internal atau external aplikasi
   if (props.type === "link") {
     if (props.isExternal) {
       return (
