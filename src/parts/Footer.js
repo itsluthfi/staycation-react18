@@ -29,7 +29,7 @@ export default function Footer() {
               </li>
               <li className="list-group-item">
                 <Button type="link" href="/payments">
-                  Use Paymentst
+                  Use Payments
                 </Button>
               </li>
             </ul>
@@ -68,7 +68,7 @@ export default function Footer() {
                 </Button>
               </li>
               <li className="list-group-item">
-                <span>Staycation, Kemang, Jakarta</span>
+                <span>Staycation, Yogyakarta, DI Yogyakarta</span>
               </li>
             </ul>
           </div>
