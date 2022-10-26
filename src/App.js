@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import LandingPage from "pages/LandingPage";
 import DetailsPage from "pages/DetailsPage";
 import CheckoutPage from "pages/CheckoutPage";
@@ -13,13 +14,15 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/properties/:id" component={DetailsPage} />
-          <Route path="/checkout" component={CheckoutPage} />
-          <Route path="/example" component={Example} />
-          <Route path="*" component={NotFound} />
+          <Route exact path="/" element={LandingPage} />
+          <Route exact path="/properties/:id" element={DetailsPage} />
+          <Route path="/checkout" element={CheckoutPage} />
+          <Route path="/example" element={Example} />
+          <Route path="*" element={NotFound} />
         </Switch>
       </Router>
+
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
