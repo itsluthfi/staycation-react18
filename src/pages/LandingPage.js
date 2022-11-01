@@ -31,18 +31,13 @@ class LandingPage extends Component {
     return (
       <>
         <Header {...this.props} />
-        <main>
-          <Hero
-            refMostPicked={this.refMostPicked}
-            data={page.landingPage.hero}
-          />
-          <MostPicked
-            refMostPicked={this.refMostPicked}
-            data={page.landingPage.mostPicked}
-          />
-          <Categories data={page.landingPage.category} />
-          <Testimony data={page.landingPage.testimonial} />
-        </main>
+        <Hero refMostPicked={this.refMostPicked} data={page.landingPage.hero} />
+        <MostPicked
+          refMostPicked={this.refMostPicked}
+          data={page.landingPage.mostPicked}
+        />
+        <Categories data={page.landingPage.category} />
+        <Testimony data={page.landingPage.testimonial} />
         <Footer />
       </>
     );

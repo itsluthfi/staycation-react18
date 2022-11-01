@@ -7,8 +7,6 @@ import Header from "parts/Header";
 import PageDetailsTitle from "parts/PageDetailsTitle";
 import PageDetailsDescription from "parts/PageDetailsDescription";
 import FeaturedImage from "parts/FeaturedImage";
-
-import itemDetails from "json/itemDetails.json";
 import BookingForm from "parts/BookingForm";
 import Activities from "parts/Activities";
 import Testimony from "parts/Testimony";
@@ -42,32 +40,30 @@ class DetailsPage extends Component {
     return (
       <>
         <Header {...this.props} />
-        <main>
-          <PageDetailsTitle
-            data={page[match.params.id]}
-            breadcrumbList={breadcrumbList}
-          />
-          <FeaturedImage data={page[match.params.id].imageId} />
-          <section className="container">
-            <div className="row">
-              <div className="col-7 pr-3">
-                <Fade bottom>
-                  <PageDetailsDescription data={page[match.params.id]} />
-                </Fade>
-              </div>
-              <div className="col-5">
-                <Fade bottom>
-                  <BookingForm
-                    itemDetails={page[match.params.id]}
-                    startBooking={this.props.checkoutBooking}
-                  />
-                </Fade>
-              </div>
+        <PageDetailsTitle
+          data={page[match.params.id]}
+          breadcrumbList={breadcrumbList}
+        />
+        <FeaturedImage data={page[match.params.id].imageId} />
+        <section className="container">
+          <div className="row">
+            <div className="col-7 pr-5">
+              <Fade bottom>
+                <PageDetailsDescription data={page[match.params.id]} />
+              </Fade>
             </div>
-          </section>
-          <Activities data={page[match.params.id].activityId} />
-          <Testimony data={page[match.params.id].testimonial} />
-        </main>
+            <div className="col-5">
+              <Fade bottom>
+                <BookingForm
+                  itemDetails={page[match.params.id]}
+                  startBooking={this.props.checkoutBooking}
+                />
+              </Fade>
+            </div>
+          </div>
+        </section>
+        <Activities data={page[match.params.id].activityId} />
+        <Testimony data={page[match.params.id].testimonial} />
         <Footer />
       </>
     );

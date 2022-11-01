@@ -14,8 +14,6 @@ import Meta from "elements/Stepper/Meta";
 import MainContent from "elements/Stepper/MainContent";
 import Controller from "elements/Stepper/Controller";
 
-import ItemDetails from "json/itemDetails.json";
-
 import { submitBooking } from "store/actions/checkout";
 
 class Checkout extends Component {
@@ -69,6 +67,7 @@ class Checkout extends Component {
   render() {
     const { data } = this.state;
     const { checkout, page } = this.props;
+    console.log(checkout);
 
     if (!checkout)
       return (
@@ -159,10 +158,10 @@ class Checkout extends Component {
                     )}
                   <Button
                     className="btn d-flex justify-content-center"
-                    type="link"
+                    type="button"
                     isBlock
                     isLight
-                    href={`/details/${ItemDetails._id}`}
+                    onClick={() => this.props.history.goBack()}
                   >
                     Cancel
                   </Button>
